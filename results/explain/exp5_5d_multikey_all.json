@@ -1,0 +1,282 @@
+{
+  "explainVersion": "1",
+  "queryPlanner": {
+    "namespace": "spine_mri.patients",
+    "parsedQuery": {
+      "$and": [
+        {
+          "findings": {
+            "$eq": "disc_bulge"
+          }
+        },
+        {
+          "findings": {
+            "$eq": "annular_tear"
+          }
+        }
+      ]
+    },
+    "indexFilterSet": false,
+    "queryHash": "649BD023",
+    "planCacheShapeHash": "649BD023",
+    "planCacheKey": "A23C687B",
+    "optimizationTimeMillis": 0,
+    "maxIndexedOrSolutionsReached": false,
+    "maxIndexedAndSolutionsReached": false,
+    "maxScansToExplodeReached": false,
+    "prunedSimilarIndexes": false,
+    "winningPlan": {
+      "isCached": false,
+      "stage": "FETCH",
+      "filter": {
+        "findings": {
+          "$eq": "disc_bulge"
+        }
+      },
+      "inputStage": {
+        "stage": "IXSCAN",
+        "keyPattern": {
+          "findings": 1
+        },
+        "indexName": "findings_1",
+        "isMultiKey": true,
+        "multiKeyPaths": {
+          "findings": [
+            "findings"
+          ]
+        },
+        "isUnique": false,
+        "isSparse": false,
+        "isPartial": false,
+        "indexVersion": 2,
+        "direction": "forward",
+        "indexBounds": {
+          "findings": [
+            "[\"annular_tear\", \"annular_tear\"]"
+          ]
+        }
+      }
+    },
+    "rejectedPlans": [
+      {
+        "isCached": false,
+        "stage": "FETCH",
+        "filter": {
+          "findings": {
+            "$eq": "annular_tear"
+          }
+        },
+        "inputStage": {
+          "stage": "IXSCAN",
+          "keyPattern": {
+            "findings": 1
+          },
+          "indexName": "findings_1",
+          "isMultiKey": true,
+          "multiKeyPaths": {
+            "findings": [
+              "findings"
+            ]
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "findings": [
+              "[\"disc_bulge\", \"disc_bulge\"]"
+            ]
+          }
+        }
+      },
+      {
+        "isCached": false,
+        "stage": "FETCH",
+        "filter": {
+          "$and": [
+            {
+              "findings": {
+                "$eq": "disc_bulge"
+              }
+            },
+            {
+              "findings": {
+                "$eq": "annular_tear"
+              }
+            }
+          ]
+        },
+        "inputStage": {
+          "stage": "AND_SORTED",
+          "inputStages": [
+            {
+              "stage": "IXSCAN",
+              "keyPattern": {
+                "findings": 1
+              },
+              "indexName": "findings_1",
+              "isMultiKey": true,
+              "multiKeyPaths": {
+                "findings": [
+                  "findings"
+                ]
+              },
+              "isUnique": false,
+              "isSparse": false,
+              "isPartial": false,
+              "indexVersion": 2,
+              "direction": "forward",
+              "indexBounds": {
+                "findings": [
+                  "[\"disc_bulge\", \"disc_bulge\"]"
+                ]
+              }
+            },
+            {
+              "stage": "IXSCAN",
+              "keyPattern": {
+                "findings": 1
+              },
+              "indexName": "findings_1",
+              "isMultiKey": true,
+              "multiKeyPaths": {
+                "findings": [
+                  "findings"
+                ]
+              },
+              "isUnique": false,
+              "isSparse": false,
+              "isPartial": false,
+              "indexVersion": 2,
+              "direction": "forward",
+              "indexBounds": {
+                "findings": [
+                  "[\"annular_tear\", \"annular_tear\"]"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "executionStats": {
+    "executionSuccess": true,
+    "nReturned": 26,
+    "executionTimeMillis": 0,
+    "totalKeysExamined": 29,
+    "totalDocsExamined": 29,
+    "executionStages": {
+      "isCached": false,
+      "stage": "FETCH",
+      "filter": {
+        "findings": {
+          "$eq": "disc_bulge"
+        }
+      },
+      "nReturned": 26,
+      "executionTimeMillisEstimate": 0,
+      "works": 31,
+      "advanced": 26,
+      "needTime": 3,
+      "needYield": 0,
+      "saveState": 0,
+      "restoreState": 0,
+      "isEOF": 1,
+      "docsExamined": 29,
+      "alreadyHasObj": 0,
+      "inputStage": {
+        "stage": "IXSCAN",
+        "nReturned": 29,
+        "executionTimeMillisEstimate": 0,
+        "works": 30,
+        "advanced": 29,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "keyPattern": {
+          "findings": 1
+        },
+        "indexName": "findings_1",
+        "isMultiKey": true,
+        "multiKeyPaths": {
+          "findings": [
+            "findings"
+          ]
+        },
+        "isUnique": false,
+        "isSparse": false,
+        "isPartial": false,
+        "indexVersion": 2,
+        "direction": "forward",
+        "indexBounds": {
+          "findings": [
+            "[\"annular_tear\", \"annular_tear\"]"
+          ]
+        },
+        "keysExamined": 29,
+        "seeks": 1,
+        "dupsTested": 29,
+        "dupsDropped": 0
+      }
+    }
+  },
+  "queryShapeHash": "36BB4EAFA87265E1DBB33696B9679F7D07B414313D370432045213046478A0DE",
+  "command": {
+    "find": "patients",
+    "filter": {
+      "findings": {
+        "$all": [
+          "disc_bulge",
+          "annular_tear"
+        ]
+      }
+    },
+    "$db": "spine_mri"
+  },
+  "serverInfo": {
+    "host": "mongodb",
+    "port": 27017,
+    "version": "8.0.34",
+    "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFrameworkControl": "trySbeRestricted",
+    "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+  },
+  "ok": 1.0,
+  "$clusterTime": {
+    "clusterTime": {
+      "$timestamp": {
+        "t": 1794105572,
+        "i": 101
+      }
+    },
+    "signature": {
+      "hash": {
+        "$binary": {
+          "base64": "p6fnfcmigGA/SM/ZdYp40ACMH6o=",
+          "subType": "00"
+        }
+      },
+      "keyId": 7705331608613552134
+    }
+  },
+  "operationTime": {
+    "$timestamp": {
+      "t": 1794105572,
+      "i": 101
+    }
+  }
+}

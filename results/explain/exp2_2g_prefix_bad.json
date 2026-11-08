@@ -1,0 +1,183 @@
+{
+  "explainVersion": "1",
+  "queryPlanner": {
+    "namespace": "spine_mri.images",
+    "parsedQuery": {
+      "patient_id": {
+        "$eq": "0001"
+      }
+    },
+    "indexFilterSet": false,
+    "queryHash": "A4F3C95B",
+    "planCacheShapeHash": "A4F3C95B",
+    "planCacheKey": "6DD927F2",
+    "optimizationTimeMillis": 0,
+    "maxIndexedOrSolutionsReached": false,
+    "maxIndexedAndSolutionsReached": false,
+    "maxScansToExplodeReached": false,
+    "prunedSimilarIndexes": false,
+    "winningPlan": {
+      "isCached": false,
+      "stage": "FETCH",
+      "filter": {
+        "patient_id": {
+          "$eq": "0001"
+        }
+      },
+      "inputStage": {
+        "stage": "IXSCAN",
+        "keyPattern": {
+          "plane": 1,
+          "sequence": 1,
+          "patient_id": 1
+        },
+        "indexName": "plane_seq_pid",
+        "isMultiKey": false,
+        "multiKeyPaths": {
+          "plane": [],
+          "sequence": [],
+          "patient_id": []
+        },
+        "isUnique": false,
+        "isSparse": false,
+        "isPartial": false,
+        "indexVersion": 2,
+        "direction": "forward",
+        "indexBounds": {
+          "plane": [
+            "[MinKey, MaxKey]"
+          ],
+          "sequence": [
+            "[MinKey, MaxKey]"
+          ],
+          "patient_id": [
+            "[MinKey, MaxKey]"
+          ]
+        }
+      }
+    },
+    "rejectedPlans": []
+  },
+  "executionStats": {
+    "executionSuccess": true,
+    "nReturned": 54,
+    "executionTimeMillis": 34,
+    "totalKeysExamined": 40562,
+    "totalDocsExamined": 40562,
+    "executionStages": {
+      "isCached": false,
+      "stage": "FETCH",
+      "filter": {
+        "patient_id": {
+          "$eq": "0001"
+        }
+      },
+      "nReturned": 54,
+      "executionTimeMillisEstimate": 34,
+      "works": 40563,
+      "advanced": 54,
+      "needTime": 40508,
+      "needYield": 0,
+      "saveState": 2,
+      "restoreState": 2,
+      "isEOF": 1,
+      "docsExamined": 40562,
+      "alreadyHasObj": 0,
+      "inputStage": {
+        "stage": "IXSCAN",
+        "nReturned": 40562,
+        "executionTimeMillisEstimate": 8,
+        "works": 40563,
+        "advanced": 40562,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 2,
+        "restoreState": 2,
+        "isEOF": 1,
+        "keyPattern": {
+          "plane": 1,
+          "sequence": 1,
+          "patient_id": 1
+        },
+        "indexName": "plane_seq_pid",
+        "isMultiKey": false,
+        "multiKeyPaths": {
+          "plane": [],
+          "sequence": [],
+          "patient_id": []
+        },
+        "isUnique": false,
+        "isSparse": false,
+        "isPartial": false,
+        "indexVersion": 2,
+        "direction": "forward",
+        "indexBounds": {
+          "plane": [
+            "[MinKey, MaxKey]"
+          ],
+          "sequence": [
+            "[MinKey, MaxKey]"
+          ],
+          "patient_id": [
+            "[MinKey, MaxKey]"
+          ]
+        },
+        "keysExamined": 40562,
+        "seeks": 1,
+        "dupsTested": 0,
+        "dupsDropped": 0
+      }
+    }
+  },
+  "queryShapeHash": "2FA8D22139F507688B0D63D979D5AFA1397F3454A0E9F8F146341EDC481CD7C4",
+  "command": {
+    "find": "images",
+    "filter": {
+      "patient_id": "0001"
+    },
+    "hint": "plane_seq_pid",
+    "$db": "spine_mri"
+  },
+  "serverInfo": {
+    "host": "mongodb",
+    "port": 27017,
+    "version": "8.0.34",
+    "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFrameworkControl": "trySbeRestricted",
+    "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+  },
+  "ok": 1.0,
+  "$clusterTime": {
+    "clusterTime": {
+      "$timestamp": {
+        "t": 1794105569,
+        "i": 8
+      }
+    },
+    "signature": {
+      "hash": {
+        "$binary": {
+          "base64": "M7WOjdf7jeO/lZqOjI92FMbgw8c=",
+          "subType": "00"
+        }
+      },
+      "keyId": 7705331608613552134
+    }
+  },
+  "operationTime": {
+    "$timestamp": {
+      "t": 1794105569,
+      "i": 8
+    }
+  }
+}

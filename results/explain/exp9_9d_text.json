@@ -1,0 +1,183 @@
+{
+  "explainVersion": "1",
+  "queryPlanner": {
+    "namespace": "spine_mri.patients",
+    "parsedQuery": {
+      "$text": {
+        "$search": "annular",
+        "$language": "english",
+        "$caseSensitive": false,
+        "$diacriticSensitive": false
+      }
+    },
+    "indexFilterSet": false,
+    "queryHash": "CF6F4CEE",
+    "planCacheShapeHash": "CF6F4CEE",
+    "planCacheKey": "08852285",
+    "optimizationTimeMillis": 2,
+    "maxIndexedOrSolutionsReached": false,
+    "maxIndexedAndSolutionsReached": false,
+    "maxScansToExplodeReached": false,
+    "prunedSimilarIndexes": false,
+    "winningPlan": {
+      "isCached": false,
+      "stage": "TEXT_MATCH",
+      "indexPrefix": {},
+      "indexName": "notes_text",
+      "parsedTextQuery": {
+        "terms": [
+          "annular"
+        ],
+        "negatedTerms": [],
+        "phrases": [],
+        "negatedPhrases": []
+      },
+      "textIndexVersion": 3,
+      "inputStage": {
+        "stage": "FETCH",
+        "inputStage": {
+          "stage": "IXSCAN",
+          "keyPattern": {
+            "_fts": "text",
+            "_ftsx": 1
+          },
+          "indexName": "notes_text",
+          "isMultiKey": true,
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "backward",
+          "indexBounds": {}
+        }
+      }
+    },
+    "rejectedPlans": []
+  },
+  "executionStats": {
+    "executionSuccess": true,
+    "nReturned": 32,
+    "executionTimeMillis": 3,
+    "totalKeysExamined": 32,
+    "totalDocsExamined": 32,
+    "executionStages": {
+      "isCached": false,
+      "stage": "TEXT_MATCH",
+      "nReturned": 32,
+      "executionTimeMillisEstimate": 0,
+      "works": 33,
+      "advanced": 32,
+      "needTime": 0,
+      "needYield": 0,
+      "saveState": 0,
+      "restoreState": 0,
+      "isEOF": 1,
+      "indexPrefix": {},
+      "indexName": "notes_text",
+      "parsedTextQuery": {
+        "terms": [
+          "annular"
+        ],
+        "negatedTerms": [],
+        "phrases": [],
+        "negatedPhrases": []
+      },
+      "textIndexVersion": 3,
+      "docsRejected": 0,
+      "inputStage": {
+        "stage": "FETCH",
+        "nReturned": 32,
+        "executionTimeMillisEstimate": 0,
+        "works": 33,
+        "advanced": 32,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "docsExamined": 32,
+        "alreadyHasObj": 0,
+        "inputStage": {
+          "stage": "IXSCAN",
+          "nReturned": 32,
+          "executionTimeMillisEstimate": 0,
+          "works": 33,
+          "advanced": 32,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "keyPattern": {
+            "_fts": "text",
+            "_ftsx": 1
+          },
+          "indexName": "notes_text",
+          "isMultiKey": true,
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "backward",
+          "indexBounds": {},
+          "keysExamined": 32,
+          "seeks": 1,
+          "dupsTested": 32,
+          "dupsDropped": 0
+        }
+      }
+    }
+  },
+  "queryShapeHash": "E8B69746CA77FE6A6EE9DBABF0B012D85547F297DFE6F378449651600B58FF1A",
+  "command": {
+    "find": "patients",
+    "filter": {
+      "$text": {
+        "$search": "annular"
+      }
+    },
+    "$db": "spine_mri"
+  },
+  "serverInfo": {
+    "host": "mongodb",
+    "port": 27017,
+    "version": "8.0.34",
+    "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFrameworkControl": "trySbeRestricted",
+    "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+  },
+  "ok": 1.0,
+  "$clusterTime": {
+    "clusterTime": {
+      "$timestamp": {
+        "t": 1794105579,
+        "i": 12
+      }
+    },
+    "signature": {
+      "hash": {
+        "$binary": {
+          "base64": "62KU+odcVCqjJ6cFWeMW3qnF+0Y=",
+          "subType": "00"
+        }
+      },
+      "keyId": 7705331608613552134
+    }
+  },
+  "operationTime": {
+    "$timestamp": {
+      "t": 1794105579,
+      "i": 12
+    }
+  }
+}

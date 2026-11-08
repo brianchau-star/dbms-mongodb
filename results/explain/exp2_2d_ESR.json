@@ -1,0 +1,213 @@
+{
+  "explainVersion": "1",
+  "queryPlanner": {
+    "namespace": "spine_mri.images",
+    "parsedQuery": {
+      "$and": [
+        {
+          "patient_id": {
+            "$eq": "0001"
+          }
+        },
+        {
+          "plane": {
+            "$eq": "SAGITTAL"
+          }
+        },
+        {
+          "sequence": {
+            "$eq": "T2"
+          }
+        }
+      ]
+    },
+    "indexFilterSet": false,
+    "queryHash": "915A21DD",
+    "planCacheShapeHash": "915A21DD",
+    "planCacheKey": "CBA76272",
+    "optimizationTimeMillis": 0,
+    "maxIndexedOrSolutionsReached": false,
+    "maxIndexedAndSolutionsReached": false,
+    "maxScansToExplodeReached": false,
+    "prunedSimilarIndexes": false,
+    "winningPlan": {
+      "isCached": false,
+      "stage": "FETCH",
+      "inputStage": {
+        "stage": "IXSCAN",
+        "keyPattern": {
+          "patient_id": 1,
+          "sequence": 1,
+          "plane": 1,
+          "series_folder": 1,
+          "instance_number": 1
+        },
+        "indexName": "pid_seq_plane_sort",
+        "isMultiKey": false,
+        "multiKeyPaths": {
+          "patient_id": [],
+          "sequence": [],
+          "plane": [],
+          "series_folder": [],
+          "instance_number": []
+        },
+        "isUnique": false,
+        "isSparse": false,
+        "isPartial": false,
+        "indexVersion": 2,
+        "direction": "forward",
+        "indexBounds": {
+          "patient_id": [
+            "[\"0001\", \"0001\"]"
+          ],
+          "sequence": [
+            "[\"T2\", \"T2\"]"
+          ],
+          "plane": [
+            "[\"SAGITTAL\", \"SAGITTAL\"]"
+          ],
+          "series_folder": [
+            "[MinKey, MaxKey]"
+          ],
+          "instance_number": [
+            "[MinKey, MaxKey]"
+          ]
+        }
+      }
+    },
+    "rejectedPlans": []
+  },
+  "executionStats": {
+    "executionSuccess": true,
+    "nReturned": 15,
+    "executionTimeMillis": 0,
+    "totalKeysExamined": 15,
+    "totalDocsExamined": 15,
+    "executionStages": {
+      "isCached": false,
+      "stage": "FETCH",
+      "nReturned": 15,
+      "executionTimeMillisEstimate": 0,
+      "works": 16,
+      "advanced": 15,
+      "needTime": 0,
+      "needYield": 0,
+      "saveState": 0,
+      "restoreState": 0,
+      "isEOF": 1,
+      "docsExamined": 15,
+      "alreadyHasObj": 0,
+      "inputStage": {
+        "stage": "IXSCAN",
+        "nReturned": 15,
+        "executionTimeMillisEstimate": 0,
+        "works": 16,
+        "advanced": 15,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "keyPattern": {
+          "patient_id": 1,
+          "sequence": 1,
+          "plane": 1,
+          "series_folder": 1,
+          "instance_number": 1
+        },
+        "indexName": "pid_seq_plane_sort",
+        "isMultiKey": false,
+        "multiKeyPaths": {
+          "patient_id": [],
+          "sequence": [],
+          "plane": [],
+          "series_folder": [],
+          "instance_number": []
+        },
+        "isUnique": false,
+        "isSparse": false,
+        "isPartial": false,
+        "indexVersion": 2,
+        "direction": "forward",
+        "indexBounds": {
+          "patient_id": [
+            "[\"0001\", \"0001\"]"
+          ],
+          "sequence": [
+            "[\"T2\", \"T2\"]"
+          ],
+          "plane": [
+            "[\"SAGITTAL\", \"SAGITTAL\"]"
+          ],
+          "series_folder": [
+            "[MinKey, MaxKey]"
+          ],
+          "instance_number": [
+            "[MinKey, MaxKey]"
+          ]
+        },
+        "keysExamined": 15,
+        "seeks": 1,
+        "dupsTested": 0,
+        "dupsDropped": 0
+      }
+    }
+  },
+  "queryShapeHash": "87F2393752B4DA74366A6DDE78128F357F69E66E5E8A6D4D546FAE1CAA55A05D",
+  "command": {
+    "find": "images",
+    "filter": {
+      "patient_id": "0001",
+      "sequence": "T2",
+      "plane": "SAGITTAL"
+    },
+    "sort": {
+      "series_folder": 1,
+      "instance_number": 1
+    },
+    "hint": "pid_seq_plane_sort",
+    "$db": "spine_mri"
+  },
+  "serverInfo": {
+    "host": "mongodb",
+    "port": 27017,
+    "version": "8.0.34",
+    "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFrameworkControl": "trySbeRestricted",
+    "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+  },
+  "ok": 1.0,
+  "$clusterTime": {
+    "clusterTime": {
+      "$timestamp": {
+        "t": 1794105569,
+        "i": 8
+      }
+    },
+    "signature": {
+      "hash": {
+        "$binary": {
+          "base64": "M7WOjdf7jeO/lZqOjI92FMbgw8c=",
+          "subType": "00"
+        }
+      },
+      "keyId": 7705331608613552134
+    }
+  },
+  "operationTime": {
+    "$timestamp": {
+      "t": 1794105569,
+      "i": 8
+    }
+  }
+}

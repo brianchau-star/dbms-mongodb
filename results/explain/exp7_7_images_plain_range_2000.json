@@ -1,0 +1,158 @@
+{
+  "explainVersion": "1",
+  "queryPlanner": {
+    "namespace": "spine_mri.images_plain",
+    "parsedQuery": {
+      "$and": [
+        {
+          "_id": {
+            "$lte": "1.3.6.1.4.1.9590.100.1.2.214865519811751890313582196532226333205"
+          }
+        },
+        {
+          "_id": {
+            "$gte": "1.3.6.1.4.1.9590.100.1.2.195574397511475491836065051360452109418"
+          }
+        }
+      ]
+    },
+    "indexFilterSet": false,
+    "queryHash": "C3D83567",
+    "planCacheShapeHash": "C3D83567",
+    "planCacheKey": "CD5997FE",
+    "optimizationTimeMillis": 0,
+    "maxIndexedOrSolutionsReached": false,
+    "maxIndexedAndSolutionsReached": false,
+    "maxScansToExplodeReached": false,
+    "prunedSimilarIndexes": false,
+    "winningPlan": {
+      "isCached": false,
+      "stage": "FETCH",
+      "inputStage": {
+        "stage": "IXSCAN",
+        "keyPattern": {
+          "_id": 1
+        },
+        "indexName": "_id_",
+        "isMultiKey": false,
+        "isUnique": true,
+        "isSparse": false,
+        "isPartial": false,
+        "indexVersion": 2,
+        "direction": "forward",
+        "indexBounds": {
+          "_id": [
+            "[\"1.3.6.1.4.1.9590.100.1.2.195574397511475491836065051360452109418\", \"1.3.6.1.4.1.9590.100.1.2.214865519811751890313582196532226333205\"]"
+          ]
+        }
+      }
+    },
+    "rejectedPlans": []
+  },
+  "executionStats": {
+    "executionSuccess": true,
+    "nReturned": 2000,
+    "executionTimeMillis": 5,
+    "totalKeysExamined": 2000,
+    "totalDocsExamined": 2000,
+    "executionStages": {
+      "isCached": false,
+      "stage": "FETCH",
+      "nReturned": 2000,
+      "executionTimeMillisEstimate": 3,
+      "works": 2001,
+      "advanced": 2000,
+      "needTime": 0,
+      "needYield": 0,
+      "saveState": 0,
+      "restoreState": 0,
+      "isEOF": 1,
+      "docsExamined": 2000,
+      "alreadyHasObj": 0,
+      "inputStage": {
+        "stage": "IXSCAN",
+        "nReturned": 2000,
+        "executionTimeMillisEstimate": 0,
+        "works": 2001,
+        "advanced": 2000,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "keyPattern": {
+          "_id": 1
+        },
+        "indexName": "_id_",
+        "isMultiKey": false,
+        "isUnique": true,
+        "isSparse": false,
+        "isPartial": false,
+        "indexVersion": 2,
+        "direction": "forward",
+        "indexBounds": {
+          "_id": [
+            "[\"1.3.6.1.4.1.9590.100.1.2.195574397511475491836065051360452109418\", \"1.3.6.1.4.1.9590.100.1.2.214865519811751890313582196532226333205\"]"
+          ]
+        },
+        "keysExamined": 2000,
+        "seeks": 1,
+        "dupsTested": 0,
+        "dupsDropped": 0
+      }
+    }
+  },
+  "queryShapeHash": "13089FA38E350835E8847C12F8BFF9C548F2059E386055AEBDF0301DE3D904D6",
+  "command": {
+    "find": "images_plain",
+    "filter": {
+      "_id": {
+        "$gte": "1.3.6.1.4.1.9590.100.1.2.195574397511475491836065051360452109418",
+        "$lte": "1.3.6.1.4.1.9590.100.1.2.214865519811751890313582196532226333205"
+      }
+    },
+    "$db": "spine_mri"
+  },
+  "serverInfo": {
+    "host": "mongodb",
+    "port": 27017,
+    "version": "8.0.34",
+    "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFrameworkControl": "trySbeRestricted",
+    "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+  },
+  "ok": 1.0,
+  "$clusterTime": {
+    "clusterTime": {
+      "$timestamp": {
+        "t": 1794105577,
+        "i": 7166
+      }
+    },
+    "signature": {
+      "hash": {
+        "$binary": {
+          "base64": "4fNerULPd2SuiGha99dlVxgJJlQ=",
+          "subType": "00"
+        }
+      },
+      "keyId": 7705331608613552134
+    }
+  },
+  "operationTime": {
+    "$timestamp": {
+      "t": 1794105577,
+      "i": 7166
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "explainVersion": "1",
+  "queryPlanner": {
+    "namespace": "spine_mri.images",
+    "parsedQuery": {
+      "patient_age": {
+        "$gte": 70
+      }
+    },
+    "indexFilterSet": false,
+    "queryHash": "51222214",
+    "planCacheShapeHash": "51222214",
+    "planCacheKey": "1F3E2965",
+    "optimizationTimeMillis": 0,
+    "maxIndexedOrSolutionsReached": false,
+    "maxIndexedAndSolutionsReached": false,
+    "maxScansToExplodeReached": false,
+    "prunedSimilarIndexes": false,
+    "winningPlan": {
+      "isCached": false,
+      "stage": "FETCH",
+      "inputStage": {
+        "stage": "IXSCAN",
+        "keyPattern": {
+          "patient_age": 1
+        },
+        "indexName": "age_partial",
+        "isMultiKey": false,
+        "multiKeyPaths": {
+          "patient_age": []
+        },
+        "isUnique": false,
+        "isSparse": false,
+        "isPartial": true,
+        "indexVersion": 2,
+        "direction": "forward",
+        "indexBounds": {
+          "patient_age": [
+            "[70, inf.0]"
+          ]
+        }
+      }
+    },
+    "rejectedPlans": []
+  },
+  "executionStats": {
+    "executionSuccess": true,
+    "nReturned": 3070,
+    "executionTimeMillis": 2,
+    "totalKeysExamined": 3070,
+    "totalDocsExamined": 3070,
+    "executionStages": {
+      "isCached": false,
+      "stage": "FETCH",
+      "nReturned": 3070,
+      "executionTimeMillisEstimate": 0,
+      "works": 3071,
+      "advanced": 3070,
+      "needTime": 0,
+      "needYield": 0,
+      "saveState": 0,
+      "restoreState": 0,
+      "isEOF": 1,
+      "docsExamined": 3070,
+      "alreadyHasObj": 0,
+      "inputStage": {
+        "stage": "IXSCAN",
+        "nReturned": 3070,
+        "executionTimeMillisEstimate": 0,
+        "works": 3071,
+        "advanced": 3070,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "keyPattern": {
+          "patient_age": 1
+        },
+        "indexName": "age_partial",
+        "isMultiKey": false,
+        "multiKeyPaths": {
+          "patient_age": []
+        },
+        "isUnique": false,
+        "isSparse": false,
+        "isPartial": true,
+        "indexVersion": 2,
+        "direction": "forward",
+        "indexBounds": {
+          "patient_age": [
+            "[70, inf.0]"
+          ]
+        },
+        "keysExamined": 3070,
+        "seeks": 1,
+        "dupsTested": 0,
+        "dupsDropped": 0
+      }
+    }
+  },
+  "queryShapeHash": "6DE28B20914BEFDA02ECF5DA1ADA07D906AA80F1E690403AA35A5C781C4F8D0A",
+  "command": {
+    "find": "images",
+    "filter": {
+      "patient_age": {
+        "$gte": 70
+      }
+    },
+    "$db": "spine_mri"
+  },
+  "serverInfo": {
+    "host": "mongodb",
+    "port": 27017,
+    "version": "8.0.34",
+    "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFrameworkControl": "trySbeRestricted",
+    "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+  },
+  "ok": 1.0,
+  "$clusterTime": {
+    "clusterTime": {
+      "$timestamp": {
+        "t": 1794105578,
+        "i": 3
+      }
+    },
+    "signature": {
+      "hash": {
+        "$binary": {
+          "base64": "YEBpsZ/dpRlwzBgYJ5nE+6amO0w=",
+          "subType": "00"
+        }
+      },
+      "keyId": 7705331608613552134
+    }
+  },
+  "operationTime": {
+    "$timestamp": {
+      "t": 1794105578,
+      "i": 3
+    }
+  }
+}

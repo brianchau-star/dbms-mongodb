@@ -1,0 +1,18 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Secrets / local config
+.env
+
+# Ảnh xuất ra từ usecases.py / similar.py (tạo lại được)
+out/
+
+# macOS
+.DS_Store
+
+# Dataset gốc không đưa lên git (tải từ Mendeley)
+01_MRI_Data/
+*.ima
+*.xlsx

@@ -1,0 +1,138 @@
+{
+  "explainVersion": "1",
+  "queryPlanner": {
+    "namespace": "spine_mri.images",
+    "parsedQuery": {
+      "$and": [
+        {
+          "patient_id": {
+            "$lte": "0005"
+          }
+        },
+        {
+          "patient_id": {
+            "$gte": "0001"
+          }
+        }
+      ]
+    },
+    "indexFilterSet": false,
+    "queryHash": "65836CB3",
+    "planCacheShapeHash": "65836CB3",
+    "planCacheKey": "11F840BA",
+    "optimizationTimeMillis": 0,
+    "maxIndexedOrSolutionsReached": false,
+    "maxIndexedAndSolutionsReached": false,
+    "maxScansToExplodeReached": false,
+    "prunedSimilarIndexes": false,
+    "winningPlan": {
+      "isCached": false,
+      "stage": "COLLSCAN",
+      "filter": {
+        "$and": [
+          {
+            "patient_id": {
+              "$lte": "0005"
+            }
+          },
+          {
+            "patient_id": {
+              "$gte": "0001"
+            }
+          }
+        ]
+      },
+      "direction": "forward"
+    },
+    "rejectedPlans": []
+  },
+  "executionStats": {
+    "executionSuccess": true,
+    "nReturned": 293,
+    "executionTimeMillis": 18,
+    "totalKeysExamined": 0,
+    "totalDocsExamined": 40562,
+    "executionStages": {
+      "isCached": false,
+      "stage": "COLLSCAN",
+      "filter": {
+        "$and": [
+          {
+            "patient_id": {
+              "$lte": "0005"
+            }
+          },
+          {
+            "patient_id": {
+              "$gte": "0001"
+            }
+          }
+        ]
+      },
+      "nReturned": 293,
+      "executionTimeMillisEstimate": 13,
+      "works": 40563,
+      "advanced": 293,
+      "needTime": 40269,
+      "needYield": 0,
+      "saveState": 1,
+      "restoreState": 1,
+      "isEOF": 1,
+      "direction": "forward",
+      "docsExamined": 40562
+    }
+  },
+  "queryShapeHash": "2B35C54F26D59B1FFFEE82B24B9696663E79848182E238CB74985F5271F1EA43",
+  "command": {
+    "find": "images",
+    "filter": {
+      "patient_id": {
+        "$gte": "0001",
+        "$lte": "0005"
+      }
+    },
+    "$db": "spine_mri"
+  },
+  "serverInfo": {
+    "host": "mongodb",
+    "port": 27017,
+    "version": "8.0.34",
+    "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFrameworkControl": "trySbeRestricted",
+    "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+  },
+  "ok": 1.0,
+  "$clusterTime": {
+    "clusterTime": {
+      "$timestamp": {
+        "t": 1794105580,
+        "i": 4
+      }
+    },
+    "signature": {
+      "hash": {
+        "$binary": {
+          "base64": "PAhJiJaK8e74Zkif5PjzZoQs+lY=",
+          "subType": "00"
+        }
+      },
+      "keyId": 7705331608613552134
+    }
+  },
+  "operationTime": {
+    "$timestamp": {
+      "t": 1794105580,
+      "i": 4
+    }
+  }
+}

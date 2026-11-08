@@ -1,0 +1,181 @@
+{
+  "explainVersion": "1",
+  "queryPlanner": {
+    "namespace": "spine_mri.images",
+    "parsedQuery": {
+      "$and": [
+        {
+          "sequence": {
+            "$eq": "T2"
+          }
+        },
+        {
+          "patient_id": {
+            "$lt": "0150"
+          }
+        },
+        {
+          "patient_id": {
+            "$gte": "0100"
+          }
+        }
+      ]
+    },
+    "indexFilterSet": false,
+    "queryHash": "25557B64",
+    "planCacheShapeHash": "25557B64",
+    "planCacheKey": "A36746F5",
+    "optimizationTimeMillis": 0,
+    "maxIndexedOrSolutionsReached": false,
+    "maxIndexedAndSolutionsReached": false,
+    "maxScansToExplodeReached": false,
+    "prunedSimilarIndexes": false,
+    "winningPlan": {
+      "isCached": false,
+      "stage": "FETCH",
+      "inputStage": {
+        "stage": "IXSCAN",
+        "keyPattern": {
+          "patient_id": 1,
+          "sequence": 1
+        },
+        "indexName": "pid_seq",
+        "isMultiKey": false,
+        "multiKeyPaths": {
+          "patient_id": [],
+          "sequence": []
+        },
+        "isUnique": false,
+        "isSparse": false,
+        "isPartial": false,
+        "indexVersion": 2,
+        "direction": "forward",
+        "indexBounds": {
+          "patient_id": [
+            "[\"0100\", \"0150\")"
+          ],
+          "sequence": [
+            "[\"T2\", \"T2\"]"
+          ]
+        }
+      }
+    },
+    "rejectedPlans": []
+  },
+  "executionStats": {
+    "executionSuccess": true,
+    "nReturned": 1586,
+    "executionTimeMillis": 2,
+    "totalKeysExamined": 1630,
+    "totalDocsExamined": 1586,
+    "executionStages": {
+      "isCached": false,
+      "stage": "FETCH",
+      "nReturned": 1586,
+      "executionTimeMillisEstimate": 0,
+      "works": 1630,
+      "advanced": 1586,
+      "needTime": 43,
+      "needYield": 0,
+      "saveState": 0,
+      "restoreState": 0,
+      "isEOF": 1,
+      "docsExamined": 1586,
+      "alreadyHasObj": 0,
+      "inputStage": {
+        "stage": "IXSCAN",
+        "nReturned": 1586,
+        "executionTimeMillisEstimate": 0,
+        "works": 1630,
+        "advanced": 1586,
+        "needTime": 43,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "keyPattern": {
+          "patient_id": 1,
+          "sequence": 1
+        },
+        "indexName": "pid_seq",
+        "isMultiKey": false,
+        "multiKeyPaths": {
+          "patient_id": [],
+          "sequence": []
+        },
+        "isUnique": false,
+        "isSparse": false,
+        "isPartial": false,
+        "indexVersion": 2,
+        "direction": "forward",
+        "indexBounds": {
+          "patient_id": [
+            "[\"0100\", \"0150\")"
+          ],
+          "sequence": [
+            "[\"T2\", \"T2\"]"
+          ]
+        },
+        "keysExamined": 1630,
+        "seeks": 44,
+        "dupsTested": 0,
+        "dupsDropped": 0
+      }
+    }
+  },
+  "queryShapeHash": "73583BE60EFA951780C05510D2CFD72131AA6AFF5DD3E36E9CAD0AA66196C3F5",
+  "command": {
+    "find": "images",
+    "filter": {
+      "patient_id": {
+        "$gte": "0100",
+        "$lt": "0150"
+      },
+      "sequence": "T2"
+    },
+    "hint": "pid_seq",
+    "$db": "spine_mri"
+  },
+  "serverInfo": {
+    "host": "mongodb",
+    "port": 27017,
+    "version": "8.0.34",
+    "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFrameworkControl": "trySbeRestricted",
+    "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+  },
+  "ok": 1.0,
+  "$clusterTime": {
+    "clusterTime": {
+      "$timestamp": {
+        "t": 1794105569,
+        "i": 8
+      }
+    },
+    "signature": {
+      "hash": {
+        "$binary": {
+          "base64": "M7WOjdf7jeO/lZqOjI92FMbgw8c=",
+          "subType": "00"
+        }
+      },
+      "keyId": 7705331608613552134
+    }
+  },
+  "operationTime": {
+    "$timestamp": {
+      "t": 1794105569,
+      "i": 8
+    }
+  }
+}

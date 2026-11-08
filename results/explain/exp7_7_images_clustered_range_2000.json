@@ -1,0 +1,114 @@
+{
+  "explainVersion": "1",
+  "queryPlanner": {
+    "namespace": "spine_mri.images_clustered",
+    "parsedQuery": {
+      "$and": [
+        {
+          "_id": {
+            "$lte": "1.3.6.1.4.1.9590.100.1.2.214865519811751890313582196532226333205"
+          }
+        },
+        {
+          "_id": {
+            "$gte": "1.3.6.1.4.1.9590.100.1.2.195574397511475491836065051360452109418"
+          }
+        }
+      ]
+    },
+    "indexFilterSet": false,
+    "queryHash": "C3D83567",
+    "planCacheShapeHash": "C3D83567",
+    "planCacheKey": "E75BCAAB",
+    "optimizationTimeMillis": 0,
+    "maxIndexedOrSolutionsReached": false,
+    "maxIndexedAndSolutionsReached": false,
+    "maxScansToExplodeReached": false,
+    "prunedSimilarIndexes": false,
+    "winningPlan": {
+      "isCached": false,
+      "stage": "CLUSTERED_IXSCAN",
+      "direction": "forward",
+      "minRecord": "1.3.6.1.4.1.9590.100.1.2.195574397511475491836065051360452109418",
+      "maxRecord": "1.3.6.1.4.1.9590.100.1.2.214865519811751890313582196532226333205"
+    },
+    "rejectedPlans": []
+  },
+  "executionStats": {
+    "executionSuccess": true,
+    "nReturned": 2000,
+    "executionTimeMillis": 0,
+    "totalKeysExamined": 0,
+    "totalDocsExamined": 2001,
+    "executionStages": {
+      "isCached": false,
+      "stage": "CLUSTERED_IXSCAN",
+      "nReturned": 2000,
+      "executionTimeMillisEstimate": 0,
+      "works": 2001,
+      "advanced": 2000,
+      "needTime": 0,
+      "needYield": 0,
+      "saveState": 0,
+      "restoreState": 0,
+      "isEOF": 1,
+      "direction": "forward",
+      "minRecord": "1.3.6.1.4.1.9590.100.1.2.195574397511475491836065051360452109418",
+      "maxRecord": "1.3.6.1.4.1.9590.100.1.2.214865519811751890313582196532226333205",
+      "docsExamined": 2001
+    }
+  },
+  "queryShapeHash": "0E6C4F353DDFDAEE7F197388748FB5DBFC5278BB69E52E711F1974D45F3719F7",
+  "command": {
+    "find": "images_clustered",
+    "filter": {
+      "_id": {
+        "$gte": "1.3.6.1.4.1.9590.100.1.2.195574397511475491836065051360452109418",
+        "$lte": "1.3.6.1.4.1.9590.100.1.2.214865519811751890313582196532226333205"
+      }
+    },
+    "$db": "spine_mri"
+  },
+  "serverInfo": {
+    "host": "mongodb",
+    "port": 27017,
+    "version": "8.0.34",
+    "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFrameworkControl": "trySbeRestricted",
+    "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+  },
+  "ok": 1.0,
+  "$clusterTime": {
+    "clusterTime": {
+      "$timestamp": {
+        "t": 1794105577,
+        "i": 7166
+      }
+    },
+    "signature": {
+      "hash": {
+        "$binary": {
+          "base64": "4fNerULPd2SuiGha99dlVxgJJlQ=",
+          "subType": "00"
+        }
+      },
+      "keyId": 7705331608613552134
+    }
+  },
+  "operationTime": {
+    "$timestamp": {
+      "t": 1794105577,
+      "i": 7166
+    }
+  }
+}

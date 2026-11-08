@@ -1,0 +1,156 @@
+{
+  "explainVersion": "1",
+  "queryPlanner": {
+    "namespace": "spine_mri.patients",
+    "parsedQuery": {
+      "notes": {
+        "$regex": "^LSS MRI"
+      }
+    },
+    "indexFilterSet": false,
+    "queryHash": "1D424A35",
+    "planCacheShapeHash": "1D424A35",
+    "planCacheKey": "A8759C17",
+    "optimizationTimeMillis": 0,
+    "maxIndexedOrSolutionsReached": false,
+    "maxIndexedAndSolutionsReached": false,
+    "maxScansToExplodeReached": false,
+    "prunedSimilarIndexes": false,
+    "winningPlan": {
+      "isCached": false,
+      "stage": "FETCH",
+      "inputStage": {
+        "stage": "IXSCAN",
+        "keyPattern": {
+          "notes": 1
+        },
+        "indexName": "notes_1",
+        "isMultiKey": false,
+        "multiKeyPaths": {
+          "notes": []
+        },
+        "isUnique": false,
+        "isSparse": false,
+        "isPartial": false,
+        "indexVersion": 2,
+        "direction": "forward",
+        "indexBounds": {
+          "notes": [
+            "[\"LSS MRI\", \"LSS MRJ\")",
+            "[/^LSS MRI/, /^LSS MRI/]"
+          ]
+        }
+      }
+    },
+    "rejectedPlans": []
+  },
+  "executionStats": {
+    "executionSuccess": true,
+    "nReturned": 304,
+    "executionTimeMillis": 1,
+    "totalKeysExamined": 305,
+    "totalDocsExamined": 304,
+    "executionStages": {
+      "isCached": false,
+      "stage": "FETCH",
+      "nReturned": 304,
+      "executionTimeMillisEstimate": 0,
+      "works": 306,
+      "advanced": 304,
+      "needTime": 1,
+      "needYield": 0,
+      "saveState": 0,
+      "restoreState": 0,
+      "isEOF": 1,
+      "docsExamined": 304,
+      "alreadyHasObj": 0,
+      "inputStage": {
+        "stage": "IXSCAN",
+        "nReturned": 304,
+        "executionTimeMillisEstimate": 0,
+        "works": 306,
+        "advanced": 304,
+        "needTime": 1,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "keyPattern": {
+          "notes": 1
+        },
+        "indexName": "notes_1",
+        "isMultiKey": false,
+        "multiKeyPaths": {
+          "notes": []
+        },
+        "isUnique": false,
+        "isSparse": false,
+        "isPartial": false,
+        "indexVersion": 2,
+        "direction": "forward",
+        "indexBounds": {
+          "notes": [
+            "[\"LSS MRI\", \"LSS MRJ\")",
+            "[/^LSS MRI/, /^LSS MRI/]"
+          ]
+        },
+        "keysExamined": 305,
+        "seeks": 2,
+        "dupsTested": 0,
+        "dupsDropped": 0
+      }
+    }
+  },
+  "queryShapeHash": "75D7B417780EE0BD53222FA473AE7A2BB87E220AC47EB3AF4BAB08F6926316AC",
+  "command": {
+    "find": "patients",
+    "filter": {
+      "notes": {
+        "$regex": "^LSS MRI"
+      }
+    },
+    "$db": "spine_mri"
+  },
+  "serverInfo": {
+    "host": "mongodb",
+    "port": 27017,
+    "version": "8.0.34",
+    "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFrameworkControl": "trySbeRestricted",
+    "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+  },
+  "ok": 1.0,
+  "$clusterTime": {
+    "clusterTime": {
+      "$timestamp": {
+        "t": 1794105579,
+        "i": 6
+      }
+    },
+    "signature": {
+      "hash": {
+        "$binary": {
+          "base64": "62KU+odcVCqjJ6cFWeMW3qnF+0Y=",
+          "subType": "00"
+        }
+      },
+      "keyId": 7705331608613552134
+    }
+  },
+  "operationTime": {
+    "$timestamp": {
+      "t": 1794105579,
+      "i": 6
+    }
+  }
+}

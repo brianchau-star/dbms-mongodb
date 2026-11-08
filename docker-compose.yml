@@ -1,0 +1,26 @@
+# MongoDB Atlas Local = mongod + mongot (Search / Vector Search) chạy dưới dạng
+# single-node replica set  ->  có đủ: transaction (cần replica set) + $vectorSearch (use case 3)
+name: dbms-mongodb
+
+services:
+  mongodb:
+    image: mongodb/mongodb-atlas-local:8.0
+    container_name: dbms-atlas-local
+    hostname: mongodb
+    environment:
+      - MONGODB_INITDB_ROOT_USERNAME=${MONGO_USER:-admin}
+      - MONGODB_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD:-admin123}
+      - DO_NOT_TRACK=1
+    ports:
+      # Dùng 27018 ở máy host để không đụng container mongo:7 đang chạy ở 27017
+      - "27018:27017"
+    volumes:
+      - db:/data/db            # data files của WiredTiger + journal
+      - configdb:/data/configdb
+      - mongot:/data/mongot    # index của Search / Vector Search
+    restart: unless-stopped
+
+volumes:
+  db:
+  configdb:
+  mongot:

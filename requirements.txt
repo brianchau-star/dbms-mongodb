@@ -1,0 +1,5 @@
+pymongo>=4.8
+pydicom>=2.4
+numpy>=1.26
+python-dotenv>=1.0
+openpyxl>=3.1
